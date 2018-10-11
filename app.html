@@ -28,15 +28,15 @@
 </nav>
 
 
-
-<div class="container-fluid">
+<!-- ngController(todoController)-->
+<div class="container-fluid" ng-controller="todoController">
 	<div class="row py-4">
 		<div class="col-md-4">
 			<div class="card">
 				<div class="card-header">Nouvelle tache</div>
 
 				<!-- ngController(addTodoController)-->
-				<div class="p-2" ng-controller="addTaskController">
+				<div class="p-2">
 					<div class="form-group">
 						<label><b>Nom de la tache</b></label>
 						<input required type="text" class="form-control" name="taskName" ng-model="taskName" >
@@ -54,8 +54,7 @@
 			</div>
 		</div>
 	
-		<!-- ngController(listTodoController)-->
-		<div class="col-md-8" ng-controller="listTodoController">
+		<div class="col-md-8" >
 			<div class="card">
 				<div class="card-header">Liste des tâches</div>
 					<div class="table-responsive">
@@ -79,7 +78,7 @@
 
 								<button ng-if="t.started!=0" class="btn btn-success"> <i class="fa fa-check"></i></button>
 								<button ng-if="t.started==0" class="btn btn-primary"> <i class="fa fa-play"></i></button>
-								<button class="btn btn-danger"> <i class="fa fa-minus"></i></button>
+								<button class="btn btn-danger" ng-click="delTask(t.id)"> <i class="fa fa-minus"></i></button>
 							</td>
 
 						</tr>
@@ -94,8 +93,7 @@
 <script type="text/javascript" src="src/app.js"></script>
 
 <!-- Controllers -->
-<script type="text/javascript" src="src/controllers/addTaskController.js"></script>
-<script type="text/javascript" src="src/controllers/listTodoController.js"></script>
+<script type="text/javascript" src="src/controllers/todoController.js"></script>
 <!-- -->
 <script type="text/javascript" src="src/services/todoProvider.js"></script>
 </html>

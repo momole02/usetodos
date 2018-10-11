@@ -16,6 +16,6 @@ function load()
 }
 
 function save( $data ){
-	var_dump(file_put_contents('todo_file.json', json_encode($data)));
+	file_put_contents('todo_file.json', json_encode($data));
 }
 

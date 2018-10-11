@@ -26,6 +26,7 @@ $started = '0';
 $terminated = '0';
 
 array_push($data, [
+	'id' =>$id,
 	'create_time' => $createTime,
 	'name' => $name,
 	'est_duration' => $estimatedDuration,
