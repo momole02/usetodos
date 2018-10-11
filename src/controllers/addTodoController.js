@@ -1,5 +1,5 @@
 'use strict';
 
-mainModule.controller('addTodoController' , function($scope){
-
+mainModule.controller('addTodoController' , function($scope,$http){
+	
 });

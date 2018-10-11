@@ -32,12 +32,13 @@
 		<div class="col-md-4">
 			<div class="card">
 				<div class="card-header">Nouvelle tache</div>
-				<div class="p-2" >
+
+				<!-- ngController(addTodoController)-->
+				<div class="p-2" ng-controller="addTodoController">
 					<div class="form-group">
 						<label><b>Nom de la tache</b></label>
 						<input required type="text" class="form-control" name="taskName" ng-model="taskName" >
 					</div>
-
 					<div class="form-group">
 						<label><b>Durée estimée</b></label>
 						<input required type="time" class="form-control" name="taskDurationTime" ng-model="taskDurationTime" >
@@ -48,7 +49,8 @@
 			</div>
 		</div>
 	
-		<div class="col-md-8">
+		<!-- ngController(listTodoController)-->
+		<div class="col-md-8" ng-controller="listTodoController">
 			<div class="card">
 				<div class="card-header">Liste des tâches</div>
 					<div class="table-responsive">
@@ -60,11 +62,11 @@
 							<th>Gain</th>
 							<th>Terminer</th>
 						</tr>
-						<tr>
-							<td>Ma tache</td>
-							<td>...</td>
-							<td>...</td>
-							<td>20%</td>
+						<tr ng-repeat="t in todos">
+							<td>{{t.name}}</td>
+							<td>{{t.est_time}}</td>
+							<td>{{t.time}}</td>
+							<td>{{t.gain}}</td>
 							<td><button class="btn btn-success"> <i class="fa fa-check"></i></button>
 							<button class="btn btn-danger"> <i class="fa fa-minus"></i></button>
 							</td>
@@ -81,5 +83,6 @@
 
 <!-- Controllers -->
 <script type="text/javascript" src="src/controllers/addTodoController.js"></script>
+<script type="text/javascript" src="src/controllers/listTodoController.js"></script>
 
 </html>

@@ -1,6 +1,10 @@
-## projet : UseTodos
+# Projet : UseTodos
 
-Petit outil permettant de réaliser des todoLists 
+Petit outil permettant de réaliser des todoLists fait avec AngularJS
 
-fait avec AngularJS, amusez vous bien !! 
+## Dépendances
+
+Vous avez néanmoins besoin d'un serveur web(apache,ngnix,wamp,easyphp,etc..) pour que l'application fonctionne correctement.
+
+
 
