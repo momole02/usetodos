@@ -1,0 +1,85 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title>::UseTodos::</title>
+ 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+ 	<link rel="stylesheet" type="text/css" href="bower_components/font-awesome/web-fonts-with-css/css/fontawesome-all.css">
+ 	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+ 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 	<meta charset="utf-8">
+ 	<link rel="stylesheet" type="text/css" href="assets/style.css">
+ </head>
+ <body ng-app="useTodos">
+
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <a class="navbar-brand" href="#"><i class="fa fa-edit"></i>UseTodos</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<div class="container-fluid">
+	<div class="row py-4">
+		<div class="col-md-4">
+			<div class="card">
+				<div class="card-header">Nouvelle tache</div>
+				<div class="p-2" >
+					<div class="form-group">
+						<label><b>Nom de la tache</b></label>
+						<input required type="text" class="form-control" name="taskName" ng-model="taskName" >
+					</div>
+
+					<div class="form-group">
+						<label><b>Durée estimée</b></label>
+						<input required type="time" class="form-control" name="taskDurationTime" ng-model="taskDurationTime" >
+					</div>
+
+					<button class="btn btn-primary" > <i class="fa fa-plus" ></i> Ajouter tache</button>
+				</div>
+			</div>
+		</div>
+	
+		<div class="col-md-8">
+			<div class="card">
+				<div class="card-header">Liste des tâches</div>
+					<div class="table-responsive">
+					<table class="table">
+						<tr>
+							<th>Nom</th>
+							<th>Durée estimée</th>
+							<th>Durée</th>
+							<th>Gain</th>
+							<th>Terminer</th>
+						</tr>
+						<tr>
+							<td>Ma tache</td>
+							<td>...</td>
+							<td>...</td>
+							<td>20%</td>
+							<td><button class="btn btn-success"> <i class="fa fa-check"></i></button>
+							<button class="btn btn-danger"> <i class="fa fa-minus"></i></button>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+<script type="text/javascript" src="src/app.js"></script>
+
+<!-- Controllers -->
+<script type="text/javascript" src="src/controllers/addTodoController.js"></script>
+
+</html>
