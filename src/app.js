@@ -1,3 +1,3 @@
 'use strict'
-const mainModule  = angular.module('useTodos', []);
+const mainModule  = angular.module('useTodos', [] );
 

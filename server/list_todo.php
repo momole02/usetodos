@@ -6,20 +6,10 @@
  */
  	
  header('Content-type:application/json');
+ 
+ include('json_file_helper.php');
 
- print json_encode([
- 	[
- 		'name' => 'Ranger la chambre',
- 		'est_time' => '00:10:00',
- 		'time' => '...',
- 		'gain' => '...',
- 		'id' => 'task-'.date('Ymdhis')
- 	],
- 	[
- 		'name' => 'Ranger la chambre',
- 		'est_time' => '00:10:00',
- 		'time' => '...',
- 		'gain' => '...',
- 		'id' => 'task-'.date('Ymdhis')
- 	],
- ]);
+ $data = load();
+ print json_encode($data);
+
+ //save($data);

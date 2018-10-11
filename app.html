@@ -3,7 +3,9 @@
  <head>
  	<title>::UseTodos::</title>
  	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+ 	
  	<link rel="stylesheet" type="text/css" href="bower_components/font-awesome/web-fonts-with-css/css/fontawesome-all.css">
+ 	
  	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
  	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
  	<meta charset="utf-8">
@@ -34,7 +36,7 @@
 				<div class="card-header">Nouvelle tache</div>
 
 				<!-- ngController(addTodoController)-->
-				<div class="p-2" ng-controller="addTodoController">
+				<div class="p-2" ng-controller="addTaskController">
 					<div class="form-group">
 						<label><b>Nom de la tache</b></label>
 						<input required type="text" class="form-control" name="taskName" ng-model="taskName" >
@@ -44,7 +46,10 @@
 						<input required type="time" class="form-control" name="taskDurationTime" ng-model="taskDurationTime" >
 					</div>
 
-					<button class="btn btn-primary" > <i class="fa fa-plus" ></i> Ajouter tache</button>
+					<button class="btn btn-primary" ng-click="addTask()" > <i class="fa fa-plus"  ></i> Ajouter tache</button>
+					<div ng-if="error!==''" class="alert-warning my-2">
+						{{error}}
+					</div>
 				</div>
 			</div>
 		</div>
@@ -58,18 +63,25 @@
 						<tr>
 							<th>Nom</th>
 							<th>Durée estimée</th>
-							<th>Durée</th>
+							<th>Fin</th>
+							<th>Debut</th>
 							<th>Gain</th>
 							<th>Terminer</th>
 						</tr>
 						<tr ng-repeat="t in todos">
 							<td>{{t.name}}</td>
-							<td>{{t.est_time}}</td>
-							<td>{{t.time}}</td>
+							<td>{{t.est_duration}}</td>
+							<td>{{t.end_time}}</td>
+							<td>{{t.start_time}}</td>
 							<td>{{t.gain}}</td>
-							<td><button class="btn btn-success"> <i class="fa fa-check"></i></button>
-							<button class="btn btn-danger"> <i class="fa fa-minus"></i></button>
+
+							<td >
+
+								<button ng-if="t.started!=0" class="btn btn-success"> <i class="fa fa-check"></i></button>
+								<button ng-if="t.started==0" class="btn btn-primary"> <i class="fa fa-play"></i></button>
+								<button class="btn btn-danger"> <i class="fa fa-minus"></i></button>
 							</td>
+
 						</tr>
 					</table>
 				</div>
@@ -82,7 +94,8 @@
 <script type="text/javascript" src="src/app.js"></script>
 
 <!-- Controllers -->
-<script type="text/javascript" src="src/controllers/addTodoController.js"></script>
+<script type="text/javascript" src="src/controllers/addTaskController.js"></script>
 <script type="text/javascript" src="src/controllers/listTodoController.js"></script>
-
+<!-- -->
+<script type="text/javascript" src="src/services/todoProvider.js"></script>
 </html>
