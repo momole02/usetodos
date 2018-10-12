@@ -60,27 +60,27 @@
 					<div class="table-responsive">
 					<table class="table">
 						<tr>
-							<th>Nom</th>
+							<th>Tâche</th>
 							<th>Durée estimée</th>
-							<th>Fin</th>
 							<th>Debut</th>
+							<th>Fin</th>
 							<th>Gain</th>
-							<th>Terminer</th>
+							<th>Options</th>
 						</tr>
 						<tr ng-repeat="t in todos">
 							<td>{{t.name}}</td>
 							<td>{{t.est_duration}}</td>
-							<td>{{t.end_time}}</td>
 							<td>{{t.start_time}}</td>
+							<td>{{t.end_time}}</td>
 							<td>{{t.gain}}</td>
 
 							<td >
-
-								<button ng-if="t.started!=0" class="btn btn-success"> <i class="fa fa-check"></i></button>
-								<button ng-if="t.started==0" class="btn btn-primary"> <i class="fa fa-play"></i></button>
+								<span ng-if="t.terminated!=1">
+								<button ng-if="t.started!=0"ng-click="terminateTask(t.id)"  class="btn btn-success"> <i class="fa fa-check" ></i></button>
+								<button ng-if="t.started==0" class="btn btn-primary" ng-click="startTask(t.id)"> <i class="fa fa-play"></i></button>
+								</span>
 								<button class="btn btn-danger" ng-click="delTask(t.id)"> <i class="fa fa-minus"></i></button>
 							</td>
-
 						</tr>
 					</table>
 				</div>

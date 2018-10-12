@@ -1,4 +1,4 @@
- <?php 
+  <?php 
 
  include ('json_file_helper.php');
 
@@ -10,7 +10,8 @@
 
 	for($i=0;$i<count($todos);++$i){
 	 	if($todos[$i]['id']===$id){
-	 		array_splice($todos, $i , 1);
+	 		$todos[$i]['started'] = '1';
+	 		$todos[$i]['start_time'] = time();
 	 		break;
 	 	}
 	 }

@@ -19,3 +19,9 @@ function save( $data ){
 	file_put_contents('todo_file.json', json_encode($data));
 }
 
+function format_time($tm){
+	$time = (int)$tm;
+	$hours = (int)floor($time/60);
+	$minutes= $time%60;
+	return (($hours>0)?"$hours hr(s) et ":"")."$minutes min(s)";
+}

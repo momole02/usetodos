@@ -24,16 +24,33 @@
 				todoProvider.getAllTodos( $scope );				
 			});
 		}
-	}
+	};
 
 
 	/* supprime une tache par l'ID */
 	$scope.delTask = function( id ){
-		console.log(id);
 		todoProvider.delTask(id).then(function(){
 		 	todoProvider.getAllTodos( $scope );
 		 }).catch(function(err){
 		 	alert("Erreur AJAX:"+err.statusText);
 		 });
+	};
+
+	$scope.startTask = function(id){
+		todoProvider.startTask(id).then(function(){
+			todoProvider.getAllTodos($scope);
+		}).catch(function(err){
+			alert("Erreur AJAX:"+err.statusText);
+		});
+	};
+
+	$scope.terminateTask = function(id){
+		console.log(id);
+		todoProvider.terminateTask(id).then(function(){
+			todoProvider.getAllTodos($scope);
+		}).catch(function(err){
+			alert("Erreur AJAX:"+err.statusText);
+		});
 	}
+
  });

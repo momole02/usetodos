@@ -31,10 +31,9 @@
  		return $http.post('server/add_todo.php' ,data , {
  			'headers' : {'Content-type' : 'application/x-www-form-urlencoded'}
  		});
- 	}
+ 	};
 
- 	this.delTask = (id)=>{
- 		
- 		return $http.get('server/del_todo.php?id='+encodeURIComponent(id));
- 	}
+ 	this.delTask = (id)=> $http.get('server/del_todo.php?id='+encodeURIComponent(id));
+ 	this.startTask =(id)=> $http.get('server/start_todo.php?id='+encodeURIComponent(id));
+ 	this.terminateTask=(id)=>$http.get('server/terminate_todo.php?id='+encodeURIComponent(id));
  });
