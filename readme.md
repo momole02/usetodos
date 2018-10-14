@@ -4,7 +4,17 @@ Petit outil permettant de réaliser des todoLists fait avec AngularJS
 
 ## Dépendances
 
-Vous avez néanmoins besoin d'un serveur web(apache,ngnix,wamp,easyphp,etc..) pour que l'application fonctionne correctement.
+<ul>
+<li>Serveur Web</lli>
+<li>PHP >= 5</lli>
+</ul>
 
+## Installation
 
+Copiez juste le dossier dans votre repertoire public_html, www, etc... 
+puis allez sur votre localhost.
+
+## Réalisé par
+
+Marc Arnaud AYENON (momole02)
 
